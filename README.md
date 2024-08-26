@@ -15,16 +15,13 @@ O projeto utiliza Maven para gerenciar suas dependências. As principais depend�
 
 ```xml
 <dependencies>
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.29</version>
-    </dependency>
-    <dependency>
-        <groupId>javax.swing</groupId>
-        <artifactId>javax.swing-api</artifactId>
-        <version>1.0.0</version>
-    </dependency>
+   <dependencies>
+      <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+      <dependency>
+         <groupId>mysql</groupId>
+         <artifactId>mysql-connector-java</artifactId>
+         <version>8.0.28</version>
+      </dependency>
 </dependencies>
 ```
 
@@ -41,7 +38,7 @@ O projeto utiliza Maven para gerenciar suas dependências. As principais depend�
         Connection conn = null;
         String urlConexao = "jdbc:mysql://localhost/nome_do_seu_BD";
         String user = "Seu_Usuario";
-        String psw= "Sua_Senha"; //se nao houver senha é só colocar "null"
+        String psw= "Sua_Senha"; //se não houver senha é só colocar "null"
 
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         conn = DriverManager.getConnection(urlConexao, user, psw);
@@ -49,16 +46,18 @@ O projeto utiliza Maven para gerenciar suas dependências. As principais depend�
         return conn;
     }
    ```
-   ## Compilação e Execução
+   
+## Compilação e Execução
 
-   Para compilar e executar o projeto, siga os seguintes passos:
+Para compilar e executar o projeto, siga os seguintes passos:
    1. Compilação:
-     ```bash
-     mvn clean compile
-     ```
+      ```bash
+          mvn clean compile
+      ```
+
    2. Execução:
       ```bash
-      mvn exec:java -Dexec.mainClass="ui.MainFrame"h
+      mvn exec:java -Dexec.mainClass="ui.MainFrame"
       ```
 
 ## Uso
